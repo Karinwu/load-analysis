@@ -2,8 +2,7 @@ name: load_shape
 
 project_name: COMMED
 
-data_dir: /Users/karin.wu/Documents/proj_local/private_repo/load_data/PJM_Load_hourly.csv
-
+data_dir: /load_data/PJM_Load_hourly.csv
 
 customer_class: Residential
 data:
@@ -24,7 +23,7 @@ data:
     - season
     - weekend    
   pivot_col: hour
-  year: 2022
+  year: 2001
   
 model:
   gamma: 0.4
