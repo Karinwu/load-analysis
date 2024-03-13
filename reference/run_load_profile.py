@@ -5,7 +5,7 @@ from pathlib import Path
 import pandas as pd
 
 
-from load_analysis.representative_load_shape.load_profile import (
+from representative_load_shape.load_profile import (
     create_rls,
 )
 
@@ -41,7 +41,7 @@ if __name__ == "__main__":
         customer_class=conf.customer_class)
 
     data['year'] = pd.to_datetime(data.Datetime).dt.year
-    data = data[data.year == 2021]
+    data = data[data.year == conf.data.year]
 
     rls = create_rls(
         ts_data=data,
