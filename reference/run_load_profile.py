@@ -1,5 +1,3 @@
-from typing import Optional
-
 from argparse import ArgumentParser
 
 from omegaconf import OmegaConf
@@ -41,14 +39,14 @@ if __name__ == "__main__":
     data = query_ts_data(
         data_dir=conf.data_dir,
         customer_class=conf.customer_class)
-    
-    data['year'] = pd.to_datetime(data.Datetime).dt.year    
+
+    data['year'] = pd.to_datetime(data.Datetime).dt.year
     data = data[data.year == 2021]
 
     rls = create_rls(
         ts_data=data,
-        start_date=pd.Timestamp("2021-01-01"),
-        end_date=pd.Timestamp("2021-12-31"),
+        start_date=pd.Timestamp("2001-01-01"),
+        end_date=pd.Timestamp("2001-12-31"),
         hourly_sum_cols=conf.data.hourly_sum_cols,
         index_cols=conf.data.index_cols,
         pivot_col=conf.data.pivot_col,
