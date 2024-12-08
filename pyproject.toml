@@ -21,6 +21,10 @@ dbt = "^1.0.0.35.4"
 dbt-bigquery = "^1.7.2"
 dbt-core = "^1.7.4"
 omegaconf = "^2.3.0"
+tslearn = "^0.6.3"
+pandas-gbq = "^0.22.0"
+gcsfs = "^2024.2.0"
+db-dtypes = "^1.2.0"
 
 [tool.poetry.group.evaluation.dependencies]
 streamlit = "1.28.2"
@@ -72,6 +76,10 @@ force-exclude = '''
 [tool.isort]
 profile = "black"
 line_length = 79
+
+
+
+
 
 
 

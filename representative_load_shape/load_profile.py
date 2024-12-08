@@ -9,9 +9,6 @@ from tslearn.barycenters import (
     softdtw_barycenter,
 )
 
-from kevala_time_series import LoadTimeSeries
-from kevala_time_series.time_series import IntervalEndingTimeSeries
-
 
 def create_rls(
         ts_data: pd.DataFrame,
@@ -192,7 +189,7 @@ def fill_load_timeseries(
         centroids_df: pd.DataFrame,
         start_date: pd.Timestamp,
         customer_type: str = 'residential',
-) -> IntervalEndingTimeSeries:
+) -> pd.DataFrame:
     """
     This function fills a time series load data for a given date.
     Args:
@@ -214,7 +211,7 @@ def fill_load_timeseries(
         & (centroids_df['weekend'] == weekend)
     ].values[0]
 
-    ts = IntervalEndingTimeSeries(
+    ts = pd.DataFrame(
         data=filtered_data[3],
         index=ts_index
     )
@@ -237,7 +234,7 @@ def scale_load(
         scale_for_season: bool,
         desired_peak: float,
         season_months: List[int] = None,
-) -> LoadTimeSeries:
+) -> pd.Series:
     """
     Args:
         load_profile: Load profile from time series data
