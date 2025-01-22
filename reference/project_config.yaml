@@ -1,6 +1,6 @@
 name: load_shape
 
-project_name: COMMED
+project_name: pjm
 
 data_dir: /load_data/PJM_Load_hourly.csv
 
